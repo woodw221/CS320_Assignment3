@@ -1,0 +1,7 @@
+This project we were to create a c/c++ program that can create a lua state properly, a lua program that takes a string in infix notation and translates it to postfix, then finally a program that from our first program completely executes a lua function in our lua state to be used in our c program.
+
+Program 3-1 took a single command line argument. This program creates a lua state and from our single command line argument runs the program from the file name inputted in the command line. Once the file is successfully called and execute the lua state is closed and the program ends.
+
+Program 3-2 is a lua program that is has the function InfixToPostfix. This function takes a single string. This string is converted from infix to postfix by tokenizing the entire string then checking each token. If the token is a number it is immediately put into the postfix table, if it is an operator it is checked against the operation stack and properly put into the stack or the items in the stack are pushed onto the postfix table. Once all tokens are done the operation table is put into the postfix table. The postfix table then is concatenated into a string and returned for use elsewhere.
+
+Program 3-3 takes a single command line argument which is a .lua file name. The program creates a lua state then runs attempts to run the InfixToPostfix function from the last program based on the filename inputted. The program then takes the returned string and prints it.
